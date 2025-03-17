@@ -24,6 +24,7 @@ const fields: FieldConfig[] = [
       { value: "true", label: "Sí" },
       { value: "false", label: "No" },
     ],
+    placeholder: "Seleccione una opción",
     validation: decretoSchema.shape.pregrado,
   },
   {
@@ -52,6 +53,7 @@ const fields: FieldConfig[] = [
       value: cat,
       label: cat,
     })),
+    placeholder: "Seleccione una opción",
     validation: decretoSchema.shape.categoria,
   },
   {
