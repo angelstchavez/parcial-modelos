@@ -136,7 +136,6 @@ const DecretoForm = () => {
     setResetForm(false);
 
     CustomToast({
-      type: "success",
       text: "Simulación exitosa",
       description: "Se ha calculado correctamente el salario.",
     });

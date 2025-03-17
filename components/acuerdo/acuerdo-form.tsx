@@ -79,7 +79,6 @@ const AcuerdoForm = () => {
     setResetForm(false);
 
     CustomToast({
-      type: "success",
       text: "Cálculo exitoso",
       description: "Se ha calculado correctamente el salario.",
     });
