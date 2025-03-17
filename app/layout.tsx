@@ -37,11 +37,13 @@ export default function RootLayout({
         <SidebarProvider>
           <AppSidebar />
           <SidebarInset>
-            <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
+            <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4 bg-green-700">
               <div>
-                <SidebarTrigger className="-ml-1" />
+                <SidebarTrigger className="-ml-1 text-white bg-white/20" />
               </div>
-              <div className="font-semibold">Modelos y Simulación</div>
+              <div className="font-semibold text-white">
+                Modelos y Simulación
+              </div>
             </header>
             <div className="min-h-screen w-full bg-muted">{children}</div>
             <Toaster />

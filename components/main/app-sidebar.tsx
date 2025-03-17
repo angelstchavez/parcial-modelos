@@ -30,14 +30,16 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Modelos y simulación</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-green-700 text-lg">
+            Modelos y simulación
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <a href={item.url}>
-                      <item.icon />
+                      <item.icon className="text-green-700" />
                       <span>{item.title}</span>
                     </a>
                   </SidebarMenuButton>

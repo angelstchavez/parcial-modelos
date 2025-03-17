@@ -101,7 +101,7 @@ const CustomForm = ({
   return (
     <Card>
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        <CardTitle className="text-green-700">{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent>
@@ -197,7 +197,12 @@ const CustomForm = ({
                 />
               ))}
             </div>
-            <Button type="submit">Registrar</Button>
+            <Button
+              type="submit"
+              className="bg-green-700 hover:bg-green-700/90"
+            >
+              Registrar
+            </Button>
           </form>
         </Form>
       </CardContent>
