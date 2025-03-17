@@ -93,6 +93,7 @@ const fields: FieldConfig[] = [
     name: "valorPunto",
     label: "Valor de un punto salarial",
     type: "number",
+    placeholder: "6435",
     validation: decretoSchema.shape.valorPunto,
   },
 ];
