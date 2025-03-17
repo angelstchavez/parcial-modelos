@@ -157,7 +157,7 @@ const DecretoForm = () => {
         <Card className="mx-auto mt-2">
           <CardHeader>
             <CardTitle>El salario mensual del profesor es:</CardTitle>
-            <CardDescription className="text-xl">
+            <CardDescription className="text-2xl text-green-700 font-bold">
               {new Intl.NumberFormat("es-CO", {
                 style: "currency",
                 currency: "COP",
@@ -166,8 +166,8 @@ const DecretoForm = () => {
             </CardDescription>
           </CardHeader>
           <CardFooter className="py-0">
-            <Button onClick={handleReset} variant={"destructive"}>
-              Restablecer Consulta
+            <Button onClick={handleReset} variant={"outline"}>
+              Restablecer cálculo
             </Button>
           </CardFooter>
         </Card>
