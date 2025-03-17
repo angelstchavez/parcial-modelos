@@ -3,6 +3,7 @@ import { Inbox } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -10,7 +11,8 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-
+import Image from "next/image";
+import upcLogo from "@/public/upc.png";
 // Menu items.
 const items = [
   {
@@ -49,6 +51,16 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      <SidebarFooter className=" border-t">
+        <Image
+          className="mx-auto mb-2 mt-2"
+          src={upcLogo}
+          alt={"Logo Universidad Popular del Cesar"}
+          priority
+          width={120}
+          height={120}
+        />
+      </SidebarFooter>
     </Sidebar>
   );
 }
