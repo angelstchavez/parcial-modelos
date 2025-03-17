@@ -53,7 +53,7 @@ const BONIFICACION_GRUPO_INVESTIGACION: Record<GrupoInvestigacion, number> = {
 };
 
 // Función para calcular el salario total
-function calcularSalario(profesor: Profesor): number {
+export function calcularSalario(profesor: Profesor): number {
   // Calcular el salario base según la categoría y dedicación
   const salarioBase = SALARIOS_BASE[profesor.categoria][profesor.dedicacion];
 

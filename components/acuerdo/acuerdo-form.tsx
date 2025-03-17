@@ -19,6 +19,7 @@ import {
   GrupoInvestigacion,
   Posgrado,
 } from "./acuerdo-schema";
+import { calcularSalario } from "./acuerdo-logic";
 
 const fields: FieldConfig[] = [
   {
