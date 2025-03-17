@@ -46,7 +46,7 @@ export default function RootLayout({
               </div>
             </header>
             <div className="min-h-screen w-full bg-muted">{children}</div>
-            <Toaster />
+            <Toaster position="top-center" />
           </SidebarInset>
         </SidebarProvider>
       </body>

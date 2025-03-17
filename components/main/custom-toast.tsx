@@ -11,9 +11,9 @@ interface ToastProps {
 
 const CustomToast = ({ type, text, description }: ToastProps) => {
   const icon = {
-    error: <VscError />,
-    success: <FaCircleCheck />,
-    info: <FiInfo />,
+    error: <VscError className="text-red-500"/>,
+    success: <FaCircleCheck className="text-green-700"/>,
+    info: <FiInfo className="text-blue-500"/>,
   }[type];
 
   toast[type](text, {
