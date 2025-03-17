@@ -5,6 +5,7 @@ export default function Home() {
         Parcial N° 1 - Modelos y Simulación
       </h1>
       <p className="text-xl">Seleccione una de las opciones del menú</p>
+      <p className="text-sm">Desarollado por: Angel Chavez - Juan Pineda</p>
     </div>
   );
 }
