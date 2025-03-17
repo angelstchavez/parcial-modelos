@@ -37,7 +37,7 @@ export default function RootLayout({
         <SidebarProvider>
           <AppSidebar />
           <SidebarInset>
-            <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4 bg-green-700">
+            <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4 bg-gradient-to-r from-green-700 to-green-500">
               <div>
                 <SidebarTrigger className="-ml-1 text-white bg-white/20" />
               </div>
