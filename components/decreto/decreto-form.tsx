@@ -13,6 +13,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
+import CustomToast from "../main/custom-toast";
 
 const fields: FieldConfig[] = [
   {
@@ -131,6 +132,12 @@ const DecretoForm = () => {
 
     setSalarioCalculado(salario);
     setResetForm(false);
+
+    CustomToast({
+      type: "success",
+      text: "Simulación exitosa",
+      description: "Se ha calculado correctamente el salario.",
+    });
   };
 
   const handleReset = () => {
