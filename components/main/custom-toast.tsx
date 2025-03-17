@@ -6,7 +6,7 @@ interface ToastProps {
   description: string;
 }
 
-const SuccessToast = ({ text, description }: ToastProps) => {
+const CustomToast = ({ text, description }: ToastProps) => {
   toast.success(text, {
     description,
     duration: 3000,
@@ -18,4 +18,4 @@ const SuccessToast = ({ text, description }: ToastProps) => {
   });
 };
 
-export default SuccessToast;
+export default CustomToast;
