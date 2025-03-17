@@ -7,6 +7,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/main/app-sidebar";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,7 +43,8 @@ export default function RootLayout({
               </div>
               <div className="font-semibold">Modelos y Simulación</div>
             </header>
-            <div className="text-left">{children}</div>
+            <div className="min-h-screen w-full bg-muted">{children}</div>
+            <Toaster />
           </SidebarInset>
         </SidebarProvider>
       </body>
