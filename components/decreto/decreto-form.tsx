@@ -165,8 +165,10 @@ const DecretoForm = () => {
               }).format(salarioCalculado)}
             </CardDescription>
           </CardHeader>
-          <CardFooter>
-            <Button onClick={handleReset}>Resetear Consulta</Button>
+          <CardFooter className="py-0">
+            <Button onClick={handleReset} variant={"destructive"}>
+              Restablecer Consulta
+            </Button>
           </CardFooter>
         </Card>
       )}
