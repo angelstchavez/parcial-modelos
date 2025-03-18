@@ -17,6 +17,7 @@ export enum Posgrado {
   Maestria = "Maestría",
   Doctorado = "Doctorado",
   Postdoctorado = "Postdoctorado",
+  Ninguno = "Ninguno",
 }
 
 export enum GrupoInvestigacion {
@@ -26,6 +27,7 @@ export enum GrupoInvestigacion {
   C = "C",
   Reconocido = "Reconocido",
   Semillero = "Semillero",
+  Ninguno = "Ninguno",
 }
 
 export const decretoSchema = z.object({
