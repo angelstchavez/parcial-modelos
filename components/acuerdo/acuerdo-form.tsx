@@ -4,13 +4,7 @@ import CustomForm, { FieldConfig } from "../main/custom-form";
 import { z } from "zod";
 import { useState } from "react";
 import { Button } from "../ui/button";
-import {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
+import { Card, CardFooter, CardHeader, CardTitle } from "../ui/card";
 import CustomToast from "../main/custom-toast";
 import {
   Categoria,
@@ -69,7 +63,12 @@ const fields: FieldConfig[] = [
 ];
 
 const AcuerdoForm = () => {
-  const [salarioCalculado, setSalarioCalculado] = useState<number | null>(null);
+  const [salarioCalculado, setSalarioCalculado] = useState<{
+    salarioBase: number;
+    bonificacionPosgrado: number;
+    bonificacionGrupoInvestigacion: number;
+    salarioTotal: number;
+  } | null>(null);
   const [resetForm, setResetForm] = useState<boolean>(false);
 
   const handleSubmit = (values: z.infer<typeof decretoSchema>) => {
@@ -95,20 +94,51 @@ const AcuerdoForm = () => {
         fields={fields}
         onSubmit={handleSubmit}
         title="Formulario de Cálculo Salarial"
-        description="Ingrese la información para calcular el salario del profesor."
+        description="Cálculo del salario con base en el salario mínimo legal vigente: $1.423.500,0"
         resetForm={resetForm}
       />
       {salarioCalculado !== null && (
         <Card className="mx-auto mt-2">
           <CardHeader>
-            <CardTitle>El salario mensual del profesor es:</CardTitle>
-            <CardDescription className="text-2xl text-green-700 font-bold">
-              {new Intl.NumberFormat("es-CO", {
-                style: "currency",
-                currency: "COP",
-                minimumFractionDigits: 0,
-              }).format(salarioCalculado)}
-            </CardDescription>
+            <CardTitle>Detalles del salario:</CardTitle>
+            <div className="border p-3 rounded-lg">
+              <div>
+                {" "}
+                <strong>Salario Base:</strong>{" "}
+                {new Intl.NumberFormat("es-CO", {
+                  style: "currency",
+                  currency: "COP",
+                  minimumFractionDigits: 0,
+                }).format(salarioCalculado.salarioBase)}
+              </div>
+              <div>
+                {" "}
+                <strong>Bonificación por Posgrado:</strong>{" "}
+                {new Intl.NumberFormat("es-CO", {
+                  style: "currency",
+                  currency: "COP",
+                  minimumFractionDigits: 0,
+                }).format(salarioCalculado.bonificacionPosgrado)}
+              </div>
+              <div>
+                <strong>Bonificación por Grupo de Investigación:</strong>{" "}
+                {new Intl.NumberFormat("es-CO", {
+                  style: "currency",
+                  currency: "COP",
+                  minimumFractionDigits: 0,
+                }).format(salarioCalculado.bonificacionGrupoInvestigacion)}
+              </div>
+              <div>
+                <strong>Salario Total:</strong>{" "}
+                <span className="text-xl text-green-700 font-bold">
+                  {new Intl.NumberFormat("es-CO", {
+                    style: "currency",
+                    currency: "COP",
+                    minimumFractionDigits: 0,
+                  }).format(salarioCalculado.salarioTotal)}
+                </span>
+              </div>
+            </div>
           </CardHeader>
           <CardFooter className="py-0">
             <Button onClick={handleReset} variant={"outline"}>

@@ -62,7 +62,7 @@ const BONIFICACION_GRUPO_INVESTIGACION: Record<GrupoInvestigacion, number> = {
   Ninguno: 0,
 };
 
-export function calcularSalario(profesor: Profesor): number {
+export function calcularSalario(profesor: Profesor) {
   const salarioBase = SALARIOS_BASE[profesor.categoria][profesor.dedicacion];
 
   const bonificacionPosgrado = profesor.posgrado
@@ -78,5 +78,10 @@ export function calcularSalario(profesor: Profesor): number {
 
   salarioTotal *= 1 + IPC_ANUAL;
 
-  return salarioTotal;
+  return {
+    salarioBase,
+    bonificacionPosgrado,
+    bonificacionGrupoInvestigacion,
+    salarioTotal,
+  };
 }
