@@ -100,36 +100,42 @@ const AcuerdoForm = () => {
       {salarioCalculado !== null && (
         <Card className="mx-auto mt-2">
           <CardHeader>
-            <CardTitle>Detalles del salario:</CardTitle>
-            <div className="border p-3 rounded-lg">
+            <CardTitle className="text-green-700">
+              Detalles del salario:
+            </CardTitle>
+            <div className="mt-4 border p-3 rounded-lg space-y-2">
               <div>
-                {" "}
-                <strong>Salario Base:</strong>{" "}
-                {new Intl.NumberFormat("es-CO", {
-                  style: "currency",
-                  currency: "COP",
-                  minimumFractionDigits: 0,
-                }).format(salarioCalculado.salarioBase)}
+                <div>Salario Base:</div>
+                <span className="font-semibold text-lg">
+                  {new Intl.NumberFormat("es-CO", {
+                    style: "currency",
+                    currency: "COP",
+                    minimumFractionDigits: 0,
+                  }).format(salarioCalculado.salarioBase)}
+                </span>
               </div>
               <div>
-                {" "}
-                <strong>Bonificación por Posgrado:</strong>{" "}
-                {new Intl.NumberFormat("es-CO", {
-                  style: "currency",
-                  currency: "COP",
-                  minimumFractionDigits: 0,
-                }).format(salarioCalculado.bonificacionPosgrado)}
+                <div>Bonificación por Posgrado:</div>
+                <span className="font-semibold text-lg">
+                  {new Intl.NumberFormat("es-CO", {
+                    style: "currency",
+                    currency: "COP",
+                    minimumFractionDigits: 0,
+                  }).format(salarioCalculado.bonificacionPosgrado)}
+                </span>
               </div>
               <div>
-                <strong>Bonificación por Grupo de Investigación:</strong>{" "}
-                {new Intl.NumberFormat("es-CO", {
-                  style: "currency",
-                  currency: "COP",
-                  minimumFractionDigits: 0,
-                }).format(salarioCalculado.bonificacionGrupoInvestigacion)}
+                <div>Bonificación por Grupo de Investigación:</div>{" "}
+                <span className="font-semibold text-lg">
+                  {new Intl.NumberFormat("es-CO", {
+                    style: "currency",
+                    currency: "COP",
+                    minimumFractionDigits: 0,
+                  }).format(salarioCalculado.bonificacionGrupoInvestigacion)}
+                </span>
               </div>
               <div>
-                <strong>Salario Total:</strong>{" "}
+                <div>Salario Total:</div>
                 <span className="text-xl text-green-700 font-bold">
                   {new Intl.NumberFormat("es-CO", {
                     style: "currency",
