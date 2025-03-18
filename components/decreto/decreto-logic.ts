@@ -2,44 +2,39 @@ import { Categoria } from "./decreto-schema";
 
 export interface Titulos {
   pregrado: boolean;
-  especializacion?: number; // Número de especializaciones (máximo 2)
-  maestria?: number; // Número de maestrías (máximo 2)
-  doctorado?: number; // Número de doctorados (máximo 2)
+  especializacion?: number;
+  maestria?: number;
+  doctorado?: number;
 }
 
 export interface Productividad {
-  articulos: number; // Número de artículos publicados
-  librosInvestigacion: number; // Número de libros de investigación
-  librosTexto: number; // Número de libros de texto
-  premios: number; // Número de premios nacionales/internacionales
-  patentes: number; // Número de patentes
+  articulos: number;
+  librosInvestigacion: number;
+  librosTexto: number;
+  premios: number;
+  patentes: number;
 }
 
 function calcularPuntosTitulos(titulos: Titulos): number {
   let puntos = 0;
 
-  // Puntos por pregrado
   if (titulos.pregrado) {
-    puntos += 178; // Puntos base por pregrado
+    puntos += 178;
   }
 
-  // Puntos por especialización
   if (titulos.especializacion) {
-    puntos += Math.min(titulos.especializacion, 2) * 20; // Máximo 2 especializaciones
+    puntos += Math.min(titulos.especializacion, 2) * 20;
   }
 
-  // Puntos por maestría
   if (titulos.maestria) {
-    puntos += Math.min(titulos.maestria, 2) * 40; // Máximo 2 maestrías
+    puntos += Math.min(titulos.maestria, 2) * 40;
   }
 
-  // Puntos por doctorado
   if (titulos.doctorado) {
-    puntos += Math.min(titulos.doctorado, 2) * 80; // Máximo 2 doctorados
+    puntos += Math.min(titulos.doctorado, 2) * 80;
   }
 
-  // Límite máximo de puntos por títulos de posgrado
-  return Math.min(puntos, 140); // Máximo 140 puntos por títulos de posgrado
+  return Math.min(puntos, 140);
 }
 
 function calcularPuntosCategoria(categoria: Categoria): number {
@@ -116,32 +111,3 @@ export function calcularSalario(
 
   return totalPuntos * valorPunto;
 }
-
-const titulosProfesor: Titulos = {
-  pregrado: true,
-  especializacion: 1,
-  maestria: 1,
-  doctorado: 1,
-};
-
-const categoriaProfesor: Categoria = Categoria.Asociado;
-const experienciaProfesor: number = 10;
-const productividadProfesor: Productividad = {
-  articulos: 5,
-  librosInvestigacion: 2,
-  librosTexto: 1,
-  premios: 1,
-  patentes: 0,
-};
-
-const valorPunto = 6435;
-
-const salarioProfesor = calcularSalario(
-  titulosProfesor,
-  categoriaProfesor,
-  experienciaProfesor,
-  productividadProfesor,
-  valorPunto
-);
-
-console.log(`El salario mensual del profesor es: $${salarioProfesor}`);
